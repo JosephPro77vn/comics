@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+		
+		<div clsss = "container">
+			<div class= "row mt-6">
+			<% comics.forEach((comic) => { %>
+				<div class = "card col-5 mx-4 my-3">
+					<a href="/comics/<%= comic._id %>">
+						<img class = "card-img card-img-top" src="<%= comic.image %>" alt="pictrue of comic">
+					</a>
+					<h3 class = "card-title mt-3"><%= comic.title %> </h3>
+					<p class = "card-text mb-3 mx-3"><%= comic.description %></p>
+				</div>
+				
+				
+			<% }) %>
+			</div>
+		</div>
+<%- include("partials/footer") %>
+

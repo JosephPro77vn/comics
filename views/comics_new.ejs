@@ -1,0 +1,65 @@
+<%- include("partials/header") %>
+<div class="container">
+	<h1> Add New Comic</h1>
+	<br>
+	
+	<form action="/comics" method="POST">
+	  <div class="form-group">
+		<label for="title"  >Title</label>
+		<input type="text" class="form-control" name="title" placeholder="Title" autofocus>
+	  </div>  
+	  <div class="form-group">
+		<label for="description"  >Description</label>
+		<input type="text" class="form-control" name="description">
+	  </div>
+		<div class="form-group">
+		<label for="author"  >Author</label>
+		<input type="text" class="form-control" name="author" placeholder="e.g. by Joseph" >
+	  </div> 
+		<div class="form-group">
+		<label for="publisher"  >Publisher</label>
+		<input type="text" class="form-control" name="publisher" placeholder="e.g. DC, Marvel, Vertigo, etc..." >
+	  </div> 
+		<div class="form-group">
+		<label for="date"  >Date</label>
+		<input type="date" class="form-control" name="date"  >
+	  </div> 
+		<div class="form-group">
+		<label for="series"  >Series</label>
+		<input type="text" class="form-control" name="series" placeholder="e.g. Iron man" >
+	  </div> 
+		<div class="form-group">
+		<label for="issue"  >Issue</label>
+		<input type="number" class="form-control" name="issue"  >
+	  </div> 
+		<div class="form-group">
+		<label for="genre"  >Genre</label>
+		<select class="form-control" id="genre" name="genre">
+			<option disabled selected >--Choose Below--</option>
+			<option>Superhero</option>
+			<option>Mnage</option>
+			<option>Slice-of-Life</option>
+			<option>Humor</option>
+			<option>Sci-fi</option>
+			<option>Fantasy</option>
+			<option>Horror</option>
+			<option>Action</option>
+			<option>Nonfiction</option>
+			
+			</select>
+	  </div> 
+		<div class="form-group form-check">
+		<input type="checkbox" class="form-control form-check-input" name="color"  >
+		<label for="color" >Color?</label>
+	  </div> 
+		<div class="form-group">
+		<label for="image"  >Link to Image</label>
+		<input type="text" class="form-control" name="image" placeholder="https//www.myImage.com ">
+	  </div> 
+	 
+	  <button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+
+
+<%- include("partials/footer") %>

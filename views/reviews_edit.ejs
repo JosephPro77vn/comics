@@ -1,0 +1,18 @@
+<%- include("partials/header") %>
+
+<div class = "container">
+	<h1>Update Your Comment</h1>
+	<form action = "/comics/<%= comic._id%>/reviews/<%= review._id %>/?_method=PUT" method= "POST">
+		
+		<div class="form-group">
+			<label for="text">Comment Text</label>
+			<textarea class="form-control" name="text" id="text" rows="8" cols="80" placeholder = "Comment text here..." required><%= review.text %></textarea>
+		</div>
+		<button type="submit" class="btn btn-primary" > Update Comment</button>
+	</form>
+	
+</div>
+
+
+
+<%- include("partials/footer") %>

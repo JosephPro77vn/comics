@@ -14,7 +14,13 @@ const LocalStrategy = require('passport-local').Strategy;
 const expressSession = require('express-session');
 
 // Config Import
-const config = require('./config');
+try{
+	var config = require('./config');
+}catch(e){
+	console.log("Could not import config. This means Your not working Locally...");
+	console.log(e);
+}
+
 
 //Routes imports
 const comicRoutes = require('./routes/comics');
@@ -41,7 +47,13 @@ app.use(morgan('tiny'));
 // CONFIG
 // ================================
 // Connect to DB
+try{
 mongoose.connect(config.db.connection, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
+}catch(e){
+	console.log("Could not connect using config, this means you are not working locally...")
+	console.log(e);
+	mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
+}
 
 // Body Parser Config
 app.use(bodyParser.urlencoded({extended: true}));
@@ -52,7 +64,7 @@ app.use(express.static('public'));
 
 //Express Session Config
 app.use(expressSession({
-	secret: "fkljfdkjafjoweijflkdsfnwqprofjkkfdjieropwmxl",
+	secret: process.env.ES_SECRET || config.expressSession.secret,
 	resave: false,
 	saveUninitialized: false
 }));
@@ -82,6 +94,6 @@ app.use("/comics/:id/reviews", reviewRoutes);
 // ================================
 // LISTEN
 // ================================
-app.listen(3000, () =>{
+app.listen( process.env.PORT || 3000, () =>{
 	console.log("App is running...");
 })

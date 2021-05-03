@@ -53,3 +53,18 @@
     </div>
   </div>
 </nav>
+<div class = "container mt-3">
+	<% if(successMessage && successMessage.length > 0){ %>
+		<div class="alert alert-success fade show" role="alert">
+	    	<%= successMessage %>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	<% } %>
+	<% if(errorMessage && errorMessage.length >0) { %>
+		<div class="alert alert-warning fade show" role="alert">
+			<%= errorMessage %>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	<% } %>
+</div>
+

@@ -30,10 +30,13 @@
 .show-image-container img{
 	width: 80%;
 }
-
-
-
-
+/* landing_page */
+.images{
+	width: 30%;
+	padding-bottom: 2%;
+	float: left;
+	margin: 1.66%;
+}
 
 
 

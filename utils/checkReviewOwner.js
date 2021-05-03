@@ -11,9 +11,11 @@ const checkReviewOwner = async(req, res, next) =>{
 		if(review.user.id.equals(req.user._id)){
 			next();
 		}else {// If not, redirect back to show page
+			req.flash("error", "You do not have a permission to do that!");
 			res.redirect('back')	
 		}	
 	}else{ 	// If not logged in, check if they Comment
+		req.flash("error", "You must login to do that!")
 		res.redirect("/login");
 	}
 }

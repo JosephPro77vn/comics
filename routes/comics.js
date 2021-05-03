@@ -69,6 +69,21 @@ router.get("/search", async (req, res) =>{
 	}
 })
 
+//Genre
+router.get("/genre/:genre", async (req, res) =>{
+	// Check it the given genre is valid
+	const validGeneres = ["superhero", "manga", "slice-of-life", "humor", "sci-fi", "fantasy", "horror"];
+	if(validGeneres.includes(req.params.genre.toLowerCase())){
+		// If yes, continue
+		const comics = await Comic.find({genre: req.params.genre}).exec();
+		res.render("comics", {comics});
+	   
+	} else{
+			// if no, send the error
+		   res.send("Please Enter a valid genre");
+	}
+})
+
 // Show
 router.get("/:id", async (req, res) =>{
 	try{

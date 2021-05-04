@@ -1,14 +1,26 @@
 <%- include('partials/header') %>
-<h1>
-	Sign Up
-</h1>
-<form action ="/signup" method='POST'>
-	<input type="email" name="email" placeholder="Email Address">
-	<input type="text" name="username" placeholder="Username">
-	<input type="password" name="password" placeholder="password">
-	<button type="submit">
+<div class="container">
+	<h1>
 		Sign Up
-	</button>
-</form>
+	</h1>
+	<form action ="/signup" method='POST'>
+		<div class="form-group signup-style" >
+			<label for="email"  >Email</label>
+		    <input type="email" class="form-control" name="email" placeholder="Email Address">
+		</div>
+		<div class="form-group signup-style">
+			<label for="username"  >UserName</label>
+			<input type="text" class="form-control" name="username" placeholder="Username">
+		</div>
+		<div class="form-group signup-style">
+			<label for="password"  >Password</label>
+			<input type="password" class="form-control" name="password" placeholder="password">
+		</div>
+		<button type="submit" class="btn btn-primary btn-signup-style" >
+			Sign Up
+		</button>
+	</form>
+</div>
+
 
 <%- include('partials/footer') %>

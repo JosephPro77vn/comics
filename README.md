@@ -1,2 +1,4 @@
-# This is both Back and fornt end web Devlop 
-# using ejs for templating and node.js for server you can look at it if you want :)
+# This is both Back and fornt end web Devlop aka MEN Stak 
+# using ejs for templating and node.js for server
+# MondoDB , passport for configuration
+# you can look at it if you want :)
